@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Untuk Naisya</title>
   <style>
     * {
@@ -13,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: url('https://imgur.com/LC6Iduh.jpg') no-repeat center center/cover;
+      background: url('https://imgur.com/4mYHxKQ.jpg') no-repeat center center/cover;
       backdrop-filter: blur(8px);
       height: 100vh;
       overflow: hidden;
@@ -33,7 +34,7 @@
       border-radius: 20px;
       overflow-y: auto;
       max-height: 80vh;
-      box-shadow: 0 -5px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
       z-index: 2;
     }
 
@@ -50,95 +51,124 @@
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     audio {
       display: none;
     }
 
-/* Hati kecil */
-  .heart {
-    position: fixed;
-    top: -30px;
-    width: 20px;
-    height: 18px;
-    background: #ff4567;
-    transform: rotate(-45deg);
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-  .heart::before,
-  .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 18px;
-    background: #ff4567;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  .heart::before {
-    top: 0;
-    left: 10px;
-  }
-  .heart::after {
-    top: -10px;
-    left: 0;
-  }
-
-  @keyframes fall {
-    0% {
+    /* Hati kecil */
+    .heart {
+      position: fixed;
       top: -30px;
-      opacity: 1;
-      transform: translateX(0) rotate(-45deg);
+      width: 20px;
+      height: 18px;
+      background: #ff4567;
+      transform: rotate(-45deg);
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
-    100% {
-      top: 110vh;
-      opacity: 0;
-      transform: translateX(30px) rotate(-45deg);
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 18px;
+      background: #ff4567;
+      border-radius: 50%;
+      z-index: 1;
     }
-  }
-      @media (max-width: 600px) {
+
+    .heart::before {
+      top: 0;
+      left: 10px;
+    }
+
+    .heart::after {
+      top: -10px;
+      left: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -30px;
+        opacity: 1;
+        transform: translateX(0) rotate(-45deg);
+      }
+
+      100% {
+        top: 110vh;
+        opacity: 0;
+        transform: translateX(30px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 600px) {
       .chat-container {
         padding: 15px;
-        max-width: 80%;
+        max-width: 90%;
+        height: 80vh;
+        font-size: 16px;
+      }
+
+      body {
+        background-size: cover;
+        background-attachment: fixed;
       }
 
       .bubble {
-        font-size: 15px;
+        font-size: 16px;
+        padding: 14px 16px;
+        line-height: 1.5;
+      }
+
+      .heart {
+        /* ubah dari 100vw ke width yang aman */
+        left: calc(100% - 20px);
       }
     }
   </style>
 </head>
+
 <body>
   <div class="chat-container" id="chat"></div>
 
-<audio id="bg-music" autoplay muted loop>
-  <source src="https://cdn.pixabay.com/download/audio/2025/05/18/audio_62df870ccb.mp3?filename=tiktokiocom_ogyrz9cvtbl0fmphpdnt-343399.mp3" type="audio/mp3">
-</audio>
+  <audio id="bg-music" autoplay muted loop>
+    <source
+      src="https://cdn.pixabay.com/download/audio/2025/05/18/audio_62df870ccb.mp3?filename=tiktokiocom_ogyrz9cvtbl0fmphpdnt-343399.mp3"
+      type="audio/mp3">
+  </audio>
 
-<script>
-  window.addEventListener('click', function () {
-    const audio = document.getElementById('bg-music');
-    audio.muted = false;
-    audio.play();
-  }, { once: true });
-</script>
+  <script>
+    window.addEventListener('click', function () {
+      const audio = document.getElementById('bg-music');
+      audio.muted = false;
+      audio.play();
+    }, { once: true });
+  </script>
 
   <script>
     const messages = [
-    "Aku tahu kamu bilang ga mau bahas ini lagi, dan aku hargai itu kok",
-    "Cuma aku masih ngerasa belum enak di hati, karena aku gak mau kamu punya pandangan salah tentang aku",
-    "Tapi satu hal yang aku harap kamu tahu...",
-    "Aku gak main-main.",
-    "Aku bukan tipe cowok yang main follow-followan buat nyari perhatian cewek.",
-    "Aku gak mau kamu ngerasa kayak kamu salah milih percaya ke aku.",
-    "Tapi aku gak bisa maksain kamu percaya aku sekarang juga.",
-    "Aku bakal stay dan buktiin pelan-pelan...",
-    "Kalau aku beneran tulus."
+      "Aku tahu kamu bilang ga mau bahas ini lagi, dan aku hargai itu kok",
+      "Cuma aku masih ngerasa belum enak di hati, karena aku gak mau kamu punya pandangan salah tentang aku",
+      "Tapi satu hal yang aku harap kamu tahu...",
+      "Aku gak main-main.",
+      "Aku bukan tipe cowok yang main follow-followan buat nyari perhatian cewek.",
+      "Aku gak mau kamu ngerasa kayak kamu salah milih percaya ke aku.",
+      "Tapi aku gak bisa maksain kamu percaya aku sekarang juga.",
+      "Aku bakal stay dan buktiin pelan-pelan...",
+      "Kalau aku beneran tulus."
     ];
 
     const chatContainer = document.getElementById('chat');
@@ -173,16 +203,19 @@
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.animationDuration = 5 + Math.random() * 2 + 's';
-      document.body.appendChild(heart); 
-    setTimeout(() => {
-      heart.remove();
-    }, 7000); // hapus hati setelah animasi selesai
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 7000); // hapus hati setelah animasi selesai
     }
     setInterval(createHeart, 500);
 
     window.onload = () => {
       addMessage();
     };
+    // Tambahkan smooth scroll agar bubble tidak kepotong saat muncul
+    chatContainer.style.scrollBehavior = 'smooth';
   </script>
 </body>
+
 </html>
